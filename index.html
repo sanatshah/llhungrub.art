@@ -11,6 +11,9 @@
   <style>
     body {
         background-color: #d2d2d2;
+        margin:0;
+        padding: 0;
+        overflow: hidden;
     }
     canvas {
         background-color: #d2d2d2;
@@ -28,9 +31,10 @@
     font-size: 5rem;
     bottom: 10px;
     top: 0;
-    margin-top: 100px;
     left: 50px;
     font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
 
     }
 
@@ -45,7 +49,12 @@
 <body>
 
   <div class="logo">
-        llhun grub [ <a href="https://www.youtube.com/channel/UCWkUKjqYYzbsgqsLQdYKZ_A">live mixes</a> ]
+    <div>
+        llhun grub 
+    </div>
+    <div style="font-size: 3rem;">
+        [ <a href="https://www.youtube.com/@llhungrubart/streams">live mixes</a> ]
+    </div>
   </div>
   <script src="./index.js"></script>
 
