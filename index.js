@@ -219,9 +219,6 @@ class Point {
 }
 
 blob = new Blob;
-let gyroscope = new Gyroscope({ frequency: 60 });
-
-gyroscope.start();
 init = function() {
   canvas = document.createElement('canvas');
   canvas.setAttribute('touch-action', 'none');
@@ -247,6 +244,8 @@ init = function() {
   let oldMousePoint = { x: 0, y: 0};
   let hover = false;
   let mouseMove = function(e) {
+
+    console.log("moving: ", e)
     
     let pos = blob.center;
     let diff = { x: e.clientX - pos.x, y: e.clientY - pos.y };
@@ -294,15 +293,11 @@ init = function() {
   }
   // window.addEventListener('mousemove', mouseMove);
   window.addEventListener('pointermove', mouseMove);
-  gyroscope.addEventListener("reading", (e) => {
-
-    console.log("e: ", e)
-    console.log(`Angular velocity along the X-axis ${gyroscope.x}`);
-    console.log(`Angular velocity along the Y-axis ${gyroscope.y}`);
-    console.log(`Angular velocity along the Z-axis ${gyroscope.z}`);
+  window.addEventListener("deviceorientation", (e) => {
+    console.log("orientation: ", e)
     mouseMove({
-      clientX: gyroscope.x,
-      clientY: gyroscope.y
+      clientX: Math.abs(e.gamma) % window.screen.width,
+      clientY: Math.abs(e.beta) % window.screen.height
     })
   });
     
