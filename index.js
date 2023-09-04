@@ -227,8 +227,11 @@ init = function() {
   console.log("window.screenx: ", window.screenX)
 
   canvas.style.marginTop = "100px"
+  canvas.style.width = "100vw"
+  canvas.style.height = "inherit"
   if (window.screen.width < 500) {
   }
+
 
   document.body.appendChild(canvas);
 
