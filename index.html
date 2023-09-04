@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
   <title></title>
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
@@ -21,42 +22,57 @@
         z-index: 10;
     }
 
-    .logo {
-     
-  z-index: 8;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    /* margin-top: 10%; */
-    font-size: 5rem;
-    bottom: 10px;
-    top: 0;
-    left: 50px;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    flex-direction: column;
+    .logoContainer {
+        z-index: 8;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        /* margin-top: 10%; */
+        font-size: 5rem;
+        bottom: 10px;
+        top: 10%;
+        left: 50px;
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logoText {
+        color: black;
+        border: black solid 5px;
+        padding: 20px;
+        width: fit-content;
+
+    }
+
+    .links {
+        font-size: 2rem;
 
     }
 
     @media (max-width: 500px) {
-        .logo {
-            display: flex;
-            flex-direction: column;
+        .logoContainer {
+            justify-content: flex-start;
+            top: 40px;
+            left: 20px;
+        }
+        .logoText{
+            font-size: 2rem;
+        }
+        .links {
+            margin-top: 15px;
+            font-size: 1.5rem;
         }
     }
   </style>
 </head>
 <body>
 
-  <div class="logo">
-    <div style="    color: black;
-    border: black solid 5px;
-    padding: 20px;
-    width: fit-content;">
+  <div class="logoContainer">
+    <div class="logoText ">
         llhun grub 
     </div>
-    <div style="font-size: 3rem;">
+    <div class="links">
         [ <a href="https://www.youtube.com/@llhungrubart/streams">live mixes</a> ]
     </div>
   </div>
