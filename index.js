@@ -220,6 +220,12 @@ init = function() {
   canvas = document.createElement('canvas');
   canvas.setAttribute('touch-action', 'none');
 
+  console.log("window.screenx: ", window.screenX)
+
+  if (window.screenX < 500) {
+    canvas.style.marginTop = "100px"
+  }
+
   document.body.appendChild(canvas);
 
   let resize = function() {
