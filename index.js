@@ -219,7 +219,9 @@ class Point {
 }
 
 blob = new Blob;
+let gyroscope = new Gyroscope({ frequency: 60 });
 
+gyroscope.start();
 init = function() {
   canvas = document.createElement('canvas');
   canvas.setAttribute('touch-action', 'none');
@@ -292,7 +294,18 @@ init = function() {
   }
   // window.addEventListener('mousemove', mouseMove);
   window.addEventListener('pointermove', mouseMove);
-  
+  gyroscope.addEventListener("reading", (e) => {
+
+    console.log("e: ", e)
+    console.log(`Angular velocity along the X-axis ${gyroscope.x}`);
+    console.log(`Angular velocity along the Y-axis ${gyroscope.y}`);
+    console.log(`Angular velocity along the Z-axis ${gyroscope.z}`);
+    mouseMove({
+      clientX: gyroscope.x,
+      clientY: gyroscope.y
+    })
+  });
+    
   blob.canvas = canvas;
   blob.init();
   blob.render();
