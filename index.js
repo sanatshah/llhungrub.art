@@ -112,7 +112,11 @@ class Blob {
     }
   }
   get radius() {
-    return this._radius || 150;
+    if (window.screen.width < 500) {
+      return this._radius || 80;
+    } else {
+      return this._radius || 150;
+    }
   }
   
   set position(value) {
@@ -222,8 +226,8 @@ init = function() {
 
   console.log("window.screenx: ", window.screenX)
 
-  if (window.screenX < 500) {
-    canvas.style.marginTop = "100px"
+  canvas.style.marginTop = "100px"
+  if (window.screen.width < 500) {
   }
 
   document.body.appendChild(canvas);
