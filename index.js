@@ -311,14 +311,26 @@ init = function() {
   }
   // window.addEventListener('mousemove', mouseMove);
   window.addEventListener('pointermove', mouseMove);
-  window.addEventListener("deviceorientation", (e) => {
-    console.log("orientation: ", e)
-    mouseMove({
-      clientX: Math.abs(e.gamma) % window.screen.width,
-      clientY: Math.abs(e.beta) % window.screen.height
+  console.log("DeviceorientationEvent: ", DeviceOrientationEvent)
+  if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
+    // (optional) Do something before API request prompt.
+    DeviceMotionEvent.requestPermission()
+        .then( response => {
+        // (optional) Do something after API prompt dismissed.
+        if ( response == "granted" ) {
+            window.addEventListener( "devicemotion", (e) => {
+                // do something for 'e' here.
+            })
+            window.addEventListener("deviceorientation", (e) => {
+              console.log("orientation: ", e)
+              mouseMove({
+                clientX: Math.abs(e.gamma) % window.screen.width,
+                clientY: Math.abs(e.beta) % window.screen.height
+              })
+            }); 
+        }
     })
-  });
-    
+}     
   blob.canvas = canvas;
   blob.init();
   blob.render();
