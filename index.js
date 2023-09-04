@@ -245,27 +245,45 @@ init = function() {
   let hover = false;
   let mouseMove = function(e) {
 
-    console.log("moving: ", e)
-    
     let pos = blob.center;
     let diff = { x: e.clientX - pos.x, y: e.clientY - pos.y };
     let dist = Math.sqrt((diff.x * diff.x) + (diff.y * diff.y));
     let angle = null;
     
     blob.mousePos = { x: pos.x - e.clientX, y: pos.y - e.clientY };
-    
-    if(dist < blob.radius && hover === false) {
+
+   
+    const isMobile = window.screen.width < 500
+    console.log("isMObile: ", isMobile)
+    if (!isMobile) {
+    if(dist < blob.radius && (hover === false)) {
       let vector = { x: e.clientX - pos.x, y: e.clientY - pos.y };
       angle = Math.atan2(vector.y, vector.x);
       hover = true;
       // blob.color = '#77FF00';
-    } else if(dist > blob.radius && hover === true){ 
+    } else if(dist > blob.radius && (hover === true)){ 
       let vector = { x: e.clientX - pos.x, y: e.clientY - pos.y };
       angle = Math.atan2(vector.y, vector.x);
       hover = false;
       blob.color = null;
     }
-    
+
+    } else {
+    if(dist < blob.radius) {
+      let vector = { x: e.clientX - pos.x, y: e.clientY - pos.y };
+      angle = Math.atan2(vector.y, vector.x);
+      hover = true;
+      // blob.color = '#77FF00';
+    } else if(dist > blob.radius ){ 
+      let vector = { x: e.clientX - pos.x, y: e.clientY - pos.y };
+      angle = Math.atan2(vector.y, vector.x);
+      hover = false;
+      blob.color = null;
+    }
+
+    }
+   
+    console.log("angle: ", angle)
     if(typeof angle == 'number') {
       
       let nearestPoint = null;
