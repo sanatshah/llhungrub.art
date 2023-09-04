@@ -9,24 +9,43 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
   <style>
+    body {
+        background-color: #d2d2d2;
+    }
     canvas {
         background-color: #d2d2d2;
         z-index: 10;
+    }
+
+    .logo {
+     
+  z-index: 8;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    /* margin-top: 10%; */
+    font-size: 5rem;
+    bottom: 10px;
+    top: 0;
+    margin-top: 100px;
+    left: 50px;
+    font-family: 'Lato', sans-serif;
+
+    }
+
+    @media (max-width: 500px) {
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
     }
   </style>
 </head>
 <body>
 
-  <div style="z-index: 8; position: absolute; display: flex;flex-direction: row;     width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  margin-top: 5%;
-  font-size: 40px;
-  font-family: 'Lato', sans-serif;
-  ">
-    <div>
-        llhun grub | <a href="https://www.youtube.com/channel/UCWkUKjqYYzbsgqsLQdYKZ_A">live mixes</a>
-    </div>
+  <div class="logo">
+        llhun grub [ <a href="https://www.youtube.com/channel/UCWkUKjqYYzbsgqsLQdYKZ_A">live mixes</a> ]
   </div>
   <script src="./index.js"></script>
 
