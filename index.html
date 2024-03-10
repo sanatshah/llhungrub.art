@@ -10,7 +10,7 @@
 <meta content="./public/flowers.jpeg" property="og:image"> 
   <style>
     body {
-        background-color: #d2d2d2;
+        background-color: black;
         margin:0;
         padding: 0;
         overflow: hidden;
@@ -20,6 +20,10 @@
         background-color: #d2d2d2;
         z-index: 10;
     }
+    h3 {
+      color: white;
+      font-family: 'Lato', sans-serif;
+    }
 
     .logoContainer {
         z-index: 8;
@@ -28,7 +32,7 @@
         /* margin-top: 10%; */
         font-size: 5rem;
         bottom: 10px;
-        top: 10%;
+        top: 15%;
         left: 50px;
         font-family: 'Lato', sans-serif;
         display: flex;
@@ -49,10 +53,23 @@
 
     }
 
-    @media (max-width: 500px) {
+    .quote {
+      position: absolute;
+      bottom: 200px;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      background-color: black;
+    }
+
+    @media (max-width: 970px) {
+      body {
+        background-color: #d2d2d2
+      }
         .logoContainer {
             justify-content: flex-start;
-            top: 40px;
+            top: 20px;
             left: 20px;
         }
         .logoText{
@@ -62,8 +79,21 @@
             margin-top: 15px;
             font-size: 1.5rem;
         }
+        .quote {
+          bottom: 180px
+        }
     }
   </style>
+  <script>
+    function onPhotosClick(){
+        const photoElement = document.getElementById("photos")
+        const canvasElement = document.getElementById("blob")
+        console.log("photoElmeent: ", photoElement)
+        console.log("canvaselement: ", canvasElement)
+        canvasElement.style.display= "none"
+        photoElement.style.display = "block"
+    }
+  </script>
 </head>
 <body>
 
@@ -72,10 +102,19 @@
         llhun grub 
     </h1>
     <div class="links">
-        [ <a href="https://www.youtube.com/@llhungrubart/streams">live mixes</a> ]
+        [ 
+        <a href="https://www.youtube.com/@llhungrubart/streams">streams</a>, 
+        <a href="https://www.youtube.com/@llhungrubart/streams">mixes</a>, 
+        <a href="https://zora.co/llhungrub.eth?enjoy=created">photos</a>
+        ]
+
     </div>
   </div>
+  <div id="photos" style="display: none; position: absolute; bottom: 0; top: 40vh" onclick="onPhotosClick()">
+    <a data-flickr-embed="true" data-footer="true" href="https://www.flickr.com/photos/199055490@N05/albums/72177720310961712" title="2023"><img src="https://live.staticflickr.com/65535/53164852039_5d6597ac11_z.jpg" width="640" height="480" alt="2023"/></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+  </div>
   <script src="./index.js"></script>
-
+  <div class="quote">
+    <h3>when let go, all things come to a stillness</h3></div>
 </body>
 </html>

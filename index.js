@@ -228,6 +228,7 @@ init = function() {
   canvas.style.marginTop = "100px"
   canvas.style.width = "100vw"
   canvas.style.height = "inherit"
+  canvas.id = "blob"
   if (window.screen.width < 500) {
   }
 
