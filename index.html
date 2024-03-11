@@ -64,10 +64,16 @@
       background-color: black;
       text-align: center;
     }
+    a{
+      color: black
+    }
 
     @media (max-width: 970px) {
       body {
         background-color: #d2d2d2
+      }
+      a {
+        color: white
       }
         .logoContainer {
             justify-content: flex-start;
@@ -76,13 +82,23 @@
         }
         .logoText{
             font-size: 2rem;
+            color: white;
+            border-color: white;
         }
         .links {
             margin-top: 15px;
             font-size: 1.5rem;
+            color: white;
         }
         .quote {
           bottom: 104px
+        }
+        .black {
+          position :absolute;
+          top: 0px;
+          height: 250px;
+          width: 100vw;
+          background-color: black;
         }
     }
   </style>
@@ -98,6 +114,10 @@
   </script>
 </head>
 <body>
+
+  <div class="black">
+
+  </div>
 
   <div class="logoContainer">
     <h1 class="logoText ">
