@@ -153,7 +153,7 @@ class Point {
       y: Math.sin(this.azimuth)
     };
     
-    this.acceleration = -0.3 + Math.random() * 0.6;
+    this.acceleration = -0.3 + Math.random() * 0.8;
   }
   
   solveWith(leftPoint, rightPoint) {
