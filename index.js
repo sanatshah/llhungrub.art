@@ -115,7 +115,7 @@ class Blob {
     if (window.screen.width < 500) {
       return this._radius || 80;
     } else {
-      return this._radius || 150;
+      return this._radius || 200;
     }
   }
   
