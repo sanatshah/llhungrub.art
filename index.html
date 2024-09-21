@@ -7,6 +7,8 @@
   <link rel="icon" type="image/x-icon" href="./favicon.ico?">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 <meta content="./public/flowers.jpeg" property="og:image"> 
   <style>
@@ -67,12 +69,16 @@
     a{
       color: #343434
     }
+      .youtube {
+        width: 365px;
+      }
 
     @media (max-width: 970px) {
       body {
         background-color: #d2d2d2
       }
-      a {
+      .youtube {
+        width: 80vw;
       }
         .logoContainer {
             justify-content: flex-start;
@@ -126,13 +132,8 @@
         ]
 
     </div>
+    <iframe style="margin-top: 40px" class="youtube" height="315" src="https://www.youtube.com/embed/f515N2B0tEo?si=nzStTvwZZD1S78a8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
-  <div id="photos" style="display: none; position: absolute; bottom: 0; top: 40vh" onclick="onPhotosClick()">
-    <a data-flickr-embed="true" data-footer="true" href="https://www.flickr.com/photos/199055490@N05/albums/72177720310961712" title="2023"><img src="https://live.staticflickr.com/65535/53164852039_5d6597ac11_z.jpg" width="640" height="480" alt="2023"/></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-  </div>
-  <div class="quote">
-    <h3>When let go, all things arrive at a natural perfection.</h3></div>
-
-    <img src="./Kala.jpeg"  style="height: 100vh; width: 100vw; object-fit: cover;" />
+  <img src="./Alias.jpeg"  style="height: 100vh; width: 100vw; object-fit: cover; position: absolute" />
 </body>
 </html>
